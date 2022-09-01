@@ -1,6 +1,9 @@
-Numero1 = int(input("Ingrese numero 1: "))
-Numero2 = int(input("Ingrese numero 2: "))
-Numero3 = int(input("Ingrese numero 3: "))
-suma = Numero1 + Numero2 + Numero3
+km = int(input("Ingrese los km que desea realizar: "))
+minimo = 150
 
-print("El promedio de estos numeros es: ", suma/3)
+if km > 0 and km < 10:
+    porkm = 20
+elif km >= 10:
+    porkm = 15
+    
+print("Coste: ", minimo + km * porkm)
