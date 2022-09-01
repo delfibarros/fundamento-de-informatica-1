@@ -1,31 +1,24 @@
-def extraerDigito(numero, cifra):
+def eliminar(v,valor):
+    i = 0
+    while i < len(v):
+        if v[i] == valor:
+            del v[i]
+            i -= 1
+        i += 1
+
+    return v
+
+def listaNueva(v1,v2):
+    largo2 = len(v2)
+    for i in range(largo2):
+        eliminar(v1,v2[i])
     
-    numeroaux2 = numero
+    return v1
 
-    if numero < 0:
-        numero = numero * -1
-    
-    numeroaux1 = numero
-    digitos = 0
+lista = [9,6,10,2,2,15,3,4,5,11]
+lista2 = [2,9,11]
 
-    while numero != 0:
-        numero = numero // 10 
-        digitos += 1
-
-    if cifra > digitos:
-        return -1
-        
-    else:
-        numeroaux1 = numeroaux1 // (10 ** (cifra))
-        numeroaux1 = numeroaux1 % 10
-
-    if numeroaux2 < 0:
-        numeroaux1 = numeroaux1 * -1
-
-    return numeroaux1
+nuevaLista = listaNueva(lista,lista2)
+print(nuevaLista)
 
 
-numero = int(input("Numero: "))
-digito = int(input("Digito: "))
-
-print(extraerDigito(numero, digito))
